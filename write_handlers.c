@@ -1,15 +1,12 @@
 #include "main.h"
-
-/************************* WRITE HANDLE *************************/
 /**
- * handle_write_char - Prints a string
+ * handle_write_char - thee f that Prints a string.
  * @c: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
  * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
+ * @precision: precision specifier.
+ * @size: Size specifier.
  * Return: Number of chars printed.
  */
 int handle_write_char(char c, char buffer[],
@@ -17,15 +14,12 @@ int handle_write_char(char c, char buffer[],
 { /* char is stored at left and paddind at buffer's right */
 	int i = 0;
 	char padd = ' ';
-
 	UNUSED(precision);
 	UNUSED(size);
-
+	
 	if (flags & F_ZERO)
 		padd = '0';
-
 	buffer[i++] = c;
-	buffer[i] = '\0';
 
 	if (width > 1)
 	{
@@ -44,7 +38,6 @@ int handle_write_char(char c, char buffer[],
 	return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
 /**
  * write_number - Prints a string
  * @is_negative: Lista of arguments
